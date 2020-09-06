@@ -17,8 +17,8 @@ function Form (props) {
         event.preventDefault()
         if (!user.username || !user.email) return
     
-        
-        props.addUser(user)
+        console.log(props)
+        props.addUsers(user)
         
         setUser(initialFormState)
       }

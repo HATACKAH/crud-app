@@ -10,12 +10,13 @@ const App = () => {
     { id: 2, username: 'Max', email: 'max@ya.ru', role: 'editor' },
   ]
 
+
   const [users, setUsers] = useState(usersData) //Добавляем хук
 
   const addUser = user => {
-    user.id = user.lenght + 1
+    user.id = users.length + 1
 
-    setUsers =([...users, user])
+    setUsers([...users, user])
   }
 
   return (
