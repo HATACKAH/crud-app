@@ -1,26 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
+import React,{useState} from 'react';
+import PropTypes from 'prop-types'
+import Form from './Form'
+import Table from './Table'
 import './App.css';
+const App = () => {
+  
+  const usersData = [
+    { id: 1, username: 'Tania', email: 'flop@gmail.com', role: 'customer' },
+    { id: 2, username: 'Max', email: 'max@ya.ru', role: 'editor' },
+  ]
 
-function App() {
+  const [users, setUsers] = useState(usersData) //Добавляем хук
+
+  const addUser = user => {
+    user.id = user.lenght + 1
+
+    setUsers =([...users, user])
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      
+      <div className="flex-row">
+        <div className="flex-large">
+      
+          <Form addUsers={addUser}/>
+        </div>
+        <div className="flex-large">
+          <h2>View users</h2>
+          
+          <Table users={users} />
+          
+        </div>
+      </div>
     </div>
-  );
+  )
 }
 
 export default App;
