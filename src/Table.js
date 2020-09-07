@@ -29,7 +29,6 @@ const Table = props => {
             <td>{user.email}</td>
             <td>{user.role}</td>
             <td>
-              <button className="button muted-button">Edit</button>
               <button className="button muted-button"  onClick={() => handleDeleteUser(user.id)}>Delete</button>
             </td>
           </tr>
