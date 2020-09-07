@@ -58,9 +58,9 @@ function Form (props) {
 
             </div>
             <ul style={{padding:'0'}}>
-            <li><input type='radio' value='Admin' name='role'/>Admin</li>
-            <li><input type='radio' value='Editor' name='role'/>Editor</li> 
-            <li><input type='radio' value='Customer' name='role'/>Customer</li>
+            <li><input type='checkbox' value='Admin' name='role'/>Admin</li>
+            <li><input type='checkbox' value='Editor' name='role'/>Editor</li> 
+            <li><input type='checkbox' value='Customer' name='role'/>Customer</li>
             </ul>
             <button className='button' type='submit'>Create user</button>
         </form>
