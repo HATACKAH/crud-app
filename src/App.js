@@ -1,5 +1,4 @@
 import React,{useState} from 'react';
-import PropTypes from 'prop-types'
 import Form from './Form'
 import Table from './Table'
 import './App.css';
@@ -19,6 +18,10 @@ const App = () => {
     setUsers([...users, user])
   }
 
+  const deleteUser = id => {
+    setUsers(users.filter(user => user.id !== id))
+  }
+
   return (
     <div className="container">
       
@@ -30,7 +33,7 @@ const App = () => {
         <div className="flex-large">
           <h2>View users</h2>
           
-          <Table users={users} />
+          <Table users={users} deleteUser={deleteUser} />
           
         </div>
       </div>

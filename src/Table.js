@@ -1,7 +1,18 @@
 import React from 'react'
 
 
-const Table = props => (
+const Table = props => {
+
+  const handleDeleteUser = id => {
+    // не забываем спросить пользователя,
+    // действительно ли он хочет удалить запись
+    let answer = window.confirm('Are you sure?')
+
+    if (answer) {
+      props.deleteUser(id)
+    }
+  }
+  return(
   <table>
     <thead>
       <tr>
@@ -19,7 +30,7 @@ const Table = props => (
             <td>{user.role}</td>
             <td>
               <button className="button muted-button">Edit</button>
-              <button className="button muted-button">Delete</button>
+              <button className="button muted-button"  onClick={() => handleDeleteUser(user.id)}>Delete</button>
             </td>
           </tr>
         ))
@@ -30,6 +41,7 @@ const Table = props => (
       )}
     </tbody>
   </table>
-)
+  )
+}
 
 export default Table
